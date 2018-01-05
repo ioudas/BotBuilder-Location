@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Bot.Builder.Location
+﻿using System.Linq;
+
+namespace Microsoft.Bot.Builder.Location
 {
     using System;
     using System.Collections.Generic;
@@ -234,11 +236,14 @@
                        this.ResourceManager.ConfirmationAsk,
                        this.selectedLocation.GetFormattedAddress(this.ResourceManager.AddressSeparator));
 
-            PromptDialog.Confirm(
+            var yesResponses = this.ResourceManager.ConfirmationPositiveResponses
+                .Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+            
+            PromptDialog.Text(
                     context,
                     async (dialogContext, answer) =>
                     {
-                        if (await answer)
+                        if (yesResponses.Contains((await answer).ToLower()))
                         {
                             this.selectedLocationConfirmed = true;
                             this.OfferAddToFavorites(dialogContext);
@@ -250,8 +255,7 @@
                         }
                     },
                     confirmationAsk,
-                    retry: this.ResourceManager.ConfirmationInvalidResponse,
-                    promptStyle: PromptStyle.None);
+                    retry: this.ResourceManager.ConfirmationInvalidResponse);
         }
 
         private void OfferAddToFavorites(IDialogContext context)

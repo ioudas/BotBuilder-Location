@@ -141,6 +141,9 @@
   <data name="ConfirmationAsk" xml:space="preserve">
     <value>OK, I will ship to {0}. Is that correct? Enter 'yes' or 'no'.</value>
   </data>
+  <data name="ConfirmationPositiveResponses" xml:space="preserve">
+    <value>yes, yep, yeah, yea, aye, arrr!</value>
+  </data>
   <data name="ConfirmationInvalidResponse" xml:space="preserve">
     <value>I didn't understand. Enter 'yes' or 'no'.</value>
   </data>

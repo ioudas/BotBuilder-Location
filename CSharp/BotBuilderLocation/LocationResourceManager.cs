@@ -60,6 +60,11 @@
         public virtual string ConfirmationAsk => this.GetResource(nameof(Strings.ConfirmationAsk));
 
         /// <summary>
+        /// The <see cref="ConfirmationPositiveResponses"/> resource string.
+        /// </summary>
+        public virtual string ConfirmationPositiveResponses => this.GetResource(nameof(Strings.ConfirmationAsk));
+
+        /// <summary>
         /// The <see cref="ConfirmationInvalidResponse"/> resource string.
         /// </summary>
         public virtual string ConfirmationInvalidResponse => this.GetResource(nameof(Strings.ConfirmationInvalidResponse));
