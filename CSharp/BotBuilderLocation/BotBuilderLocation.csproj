@@ -146,4 +146,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="Pack">
+    <Exec Command="nuget pack"/>
+  </Target>
+  <Target Name="Publish">
+    <Exec Command="nuget push Mluvii.Bot.Builder.Location.Private.Fork.0.0.2-rc.nupkg -Source https://api.nuget.org/v3/index.json"/>
+  </Target>
 </Project>

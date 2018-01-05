@@ -146,12 +146,14 @@
             PromptStyle style = this.supportsKeyboard
                         ? PromptStyle.Keyboard
                         : PromptStyle.None;
-
-            PromptDialog.Confirm(
+            var yesResponses = this.ResourceManager.ConfirmationPositiveResponses
+                .Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+            
+            PromptDialog.Text(
                     context,
                     async (dialogContext, answer) =>
                     {
-                        if (await answer)
+                        if (yesResponses.Contains((await answer).ToLower()))
                         {
                             await this.ProcessRetrievedLocation(dialogContext, this.locations.First());
                         }
@@ -162,8 +164,7 @@
                     },
                     prompt: this.ResourceManager.SingleResultFound,
                     retry: this.ResourceManager.ConfirmationInvalidResponse,
-                    attempts: 3,
-                    promptStyle: style);
+                    attempts: 3);
         }
 
         /// <summary>
