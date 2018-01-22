@@ -39,7 +39,7 @@
             }
             else
             {
-                context.Done(new LocationDialogResponse(this.selectedLocation));
+                context.Done(new LocationDialogResponse(this.selectedLocation, null, true));
             }
         }
 
@@ -52,7 +52,7 @@
         /// <returns>The asynchronous task.</returns>
         internal override async Task ResumeAfterChildDialogInternalAsync(IDialogContext context, IAwaitable<LocationDialogResponse> result)
         {
-            context.Done(new LocationDialogResponse((await result).Location));
+            context.Done(await result);
         }
 
         /// <summary>

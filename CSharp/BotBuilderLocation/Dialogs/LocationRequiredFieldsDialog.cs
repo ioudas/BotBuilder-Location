@@ -39,6 +39,8 @@
 
         private async Task CompleteMissingFields(IDialogContext context)
         {
+            bool clarified = false;
+            
             bool notComplete =
                 await this.CompleteFieldIfMissing(context, this.ResourceManager.StreetAddress, LocationRequiredFields.StreetAddress, "AddressLine", this.location.Address.AddressLine)
                 || await this.CompleteFieldIfMissing(context, this.ResourceManager.Locality, LocationRequiredFields.Locality, "Locality", this.location.Address.Locality)
@@ -46,9 +48,11 @@
                 || await this.CompleteFieldIfMissing(context, this.ResourceManager.PostalCode, LocationRequiredFields.PostalCode, "PostalCode", this.location.Address.PostalCode)
                 || await this.CompleteFieldIfMissing(context, this.ResourceManager.Country, LocationRequiredFields.Country, "CountryRegion", this.location.Address.CountryRegion);
 
+            if (notComplete) clarified = true;
+                
             if (!notComplete)
             {
-                var result = new LocationDialogResponse(this.location);
+                var result = new LocationDialogResponse(this.location, null, !clarified);
                 context.Done(result);
             }
         }

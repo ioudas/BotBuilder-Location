@@ -24,16 +24,20 @@
         /// The message.
         /// </value>
         public string Message { get; }
+        
+        public bool Confirmed { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LocationDialogResponse"/> class.
         /// </summary>
         /// <param name="location">The location.</param>
         /// <param name="message">The message.</param>
-        public LocationDialogResponse(Bing.Location location = null, string message = null)
+        /// <param name="confirmed">Whether the address has been confirmed by user.</param>
+        public LocationDialogResponse(Bing.Location location = null, string message = null, bool confirmed = false)
         {
             this.Location = location;
             this.Message = message;
+            this.Confirmed = confirmed;
         }
     }
 }

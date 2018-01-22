@@ -60,6 +60,10 @@
                     heroCard.Images = new[] { image };
                 }
 
+                if (locations.Count > 1)
+                {
+                    heroCard.Buttons.Add(new CardAction() {Title = locationString ,Value = i});
+                }
                 cards.Add(heroCard);
 
                 i++;

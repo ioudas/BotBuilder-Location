@@ -216,9 +216,10 @@ namespace Microsoft.Bot.Builder.Location
             }
             else // resuming after the retriever child
             {
-                this.selectedLocation = (await result).Location;
+                var locationDialogResponse = await result;
+                this.selectedLocation = locationDialogResponse.Location;
 
-                if (this.options.HasFlag(LocationOptions.SkipFinalConfirmation))
+                if (this.options.HasFlag(LocationOptions.SkipFinalConfirmation) || locationDialogResponse.Confirmed)
                 {
                     this.selectedLocationConfirmed = true;
                     this.OfferAddToFavorites(context);

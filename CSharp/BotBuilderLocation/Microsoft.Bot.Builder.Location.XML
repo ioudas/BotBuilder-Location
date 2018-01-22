@@ -215,12 +215,13 @@
             The message.
             </value>
         </member>
-        <member name="M:Microsoft.Bot.Builder.Location.Dialogs.LocationDialogResponse.#ctor(Microsoft.Bot.Builder.Location.Bing.Location,System.String)">
+        <member name="M:Microsoft.Bot.Builder.Location.Dialogs.LocationDialogResponse.#ctor(Microsoft.Bot.Builder.Location.Bing.Location,System.String,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Microsoft.Bot.Builder.Location.Dialogs.LocationDialogResponse"/> class.
             </summary>
             <param name="location">The location.</param>
             <param name="message">The message.</param>
+            <param name="confirmed">Whether the address has been confirmed by user.</param>
         </member>
         <member name="T:Microsoft.Bot.Builder.Location.Dialogs.LocationRequiredFieldsDialog">
             <summary>
