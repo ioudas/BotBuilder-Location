@@ -151,15 +151,6 @@ namespace Microsoft.Bot.Builder.Location.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to yes, yep, yeah, yea, aye, arrr!.
-        /// </summary>
-        internal static string ConfirmationPositiveResponses {
-            get {
-                return ResourceManager.GetString("ConfirmationPositiveResponses", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to country.
         /// </summary>
         internal static string Country {

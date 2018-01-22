@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyInformationalVersion("0.0.2-rc")]
+[assembly: AssemblyInformationalVersion("0.0.3-rc")]
 
 [assembly: InternalsVisibleTo("Microsoft.Bot.Builder.Location.Tests")]
 

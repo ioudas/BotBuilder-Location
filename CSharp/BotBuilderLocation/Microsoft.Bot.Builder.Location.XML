@@ -602,11 +602,6 @@
             The <see cref="P:Microsoft.Bot.Builder.Location.LocationResourceManager.ConfirmationAsk"/> resource string.
             </summary>
         </member>
-        <member name="P:Microsoft.Bot.Builder.Location.LocationResourceManager.ConfirmationPositiveResponses">
-            <summary>
-            The <see cref="P:Microsoft.Bot.Builder.Location.LocationResourceManager.ConfirmationPositiveResponses"/> resource string.
-            </summary>
-        </member>
         <member name="P:Microsoft.Bot.Builder.Location.LocationResourceManager.ConfirmationInvalidResponse">
             <summary>
             The <see cref="P:Microsoft.Bot.Builder.Location.LocationResourceManager.ConfirmationInvalidResponse"/> resource string.
@@ -1104,11 +1099,6 @@
         <member name="P:Microsoft.Bot.Builder.Location.Resources.Strings.ConfirmationInvalidResponse">
             <summary>
               Looks up a localized string similar to I didn&apos;t understand. Enter &apos;yes&apos; or &apos;no&apos;..
-            </summary>
-        </member>
-        <member name="P:Microsoft.Bot.Builder.Location.Resources.Strings.ConfirmationPositiveResponses">
-            <summary>
-              Looks up a localized string similar to yes, yep, yeah, yea, aye, arrr!.
             </summary>
         </member>
         <member name="P:Microsoft.Bot.Builder.Location.Resources.Strings.Country">
